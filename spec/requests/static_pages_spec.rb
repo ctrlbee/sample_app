@@ -3,6 +3,8 @@ require 'capybara/rails'
 
 describe "Static pages" do 
   
+  let (:base_title) {"Ruby on Rails Sample App"}
+  
   describe "Home page" do
      it "should have the content 'Sample App'" do
        visit '/static_pages/home'
@@ -32,7 +34,7 @@ describe "Static pages" do
       
       it "should have title 'Beehive'" do
       visit '/static_pages/company' 
-      expect(page).to have_title 'Beehive'
+      expect(page).to have_title ("#{base_title} | Beehive")
       end
       
   end
