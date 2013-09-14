@@ -5,7 +5,7 @@ require 'spec_helper'
 
 describe "UserPages" do
   
-  def full_title(title)
+def full_title(title)
   base_title = "Ruby on Rails Sample App"
   
   if title.empty?

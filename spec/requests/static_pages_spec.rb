@@ -30,15 +30,28 @@ describe "Static pages" do
   describe "company page" do
       subject {page}   
       before {visit company_path}
-      it {should have_content('Company')} 
+      it {should have_selector("h1", text:"Company")} 
       it {should have_title ("#{base_title} | Beehive")}
   end
   
-  describe "contact page"do 
+  describe "contact page" do 
     it "should have the word contact" do
       visit contact_path 
       expect(page).to have_content("contact us")
       end
   end  
   
+  
+  #linking test
+  describe "static links" do 
+    it "should link properly" do
+    visit root_path
+    click_link "Company"
+    expect(page).to have_content("Company")
+    end
+  end
+  
+  
+  
 end
+

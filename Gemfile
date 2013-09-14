@@ -1,3 +1,8 @@
+if RUBY_VERSION =~ /2.0/
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end
+
 source 'https://rubygems.org'
 ruby '2.0.0' 
 
@@ -33,6 +38,8 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 
 gem 'bootstrap-sass', '2.3.2.0'
+
+gem 'bcrypt-ruby', '3.0.1'
 
 
 group :doc do
